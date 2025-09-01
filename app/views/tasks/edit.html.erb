@@ -1,2 +1,9 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<%= form_with model: @task do |f| %>
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+  <h4>内容</h4>
+  <%= f.text_area :description %>
+  <h4>進行状況</h4>
+  <%= f.check_box :done %>
+  <%= f.submit '更新' %>
+<% end %>
