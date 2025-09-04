@@ -39,6 +39,12 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice: 'タスクを削除しました'
   end
 
+  def toggle
+    @task = Task.find(params[:id])
+    @task.update(done: !@task.done)
+    redirect_to tasks_path, notice: '完了状態を更新しました'
+  end
+
   private
 
   def task_params

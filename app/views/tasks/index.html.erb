@@ -22,6 +22,8 @@
           <% else %>
             ⏳ 未完了
           <% end %>
+
+          <%= button_to "切り替え", toggle_task_path(task), method: :patch %>
         </td>
         <td>
           <%= link_to '詳細', task_path(task) %> |
