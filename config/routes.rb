@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "tasks#index"
+  get 'search', to: 'searches#search', as: 'search'
   resources :tasks, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     member do
       patch :toggle
