@@ -2,6 +2,12 @@
 
 <%= link_to "新規タスク作成", new_task_path, class: "btn btn-primary" %>
 
+<div>
+  <%= link_to "すべて", tasks_path %> |
+  <%= link_to "完了タスクのみ", tasks_path(filter: "completed") %> |
+  <%= link_to "未完了タスクのみ", tasks_path(filter: "incomplete") %>
+</div>
+
 <table border="1" cellpadding="8" cellspacing="0">
   <thead>
     <tr>

@@ -1,6 +1,12 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    if params[:filter] == "completed"
+      @tasks = Task.completed
+    elsif params[:filter] == "incomplete"
+      @tasks = Task.incomplete
+    else
+      @tasks = Task.all
+    end
   end
 
   def show
